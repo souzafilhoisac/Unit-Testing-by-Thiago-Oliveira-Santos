@@ -5,13 +5,12 @@
 		"es2021": true
 	},
 	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
-	"overrides": [],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"project": ["tsconfig.json"],
 		"ecmaVersion": "latest"
 	},
-	"plugins": ["@typescript-eslint", "unused_imports"],
+	"plugins": ["@typescript-eslint", "unused-imports"],
 	"ignorePatterns": [
 		"*.json",
 		"dist/**",
@@ -21,34 +20,56 @@
 		"test/**/*.json",
 		"coverage/**"
 	],
+	"overrides": [
+		{
+			"files": ["*.ts", "**/*.ts"],
+			"rules": {
+				"@typescript-eslint/no-explicit-any": "error",
+				"no-magic-numbers": "off",
+				"@typescript-eslint/no-magic-numbers": [
+					"error",
+					{
+						"ignore": [0, 1, -1],
+						"ignoreEnums": true
+					}
+				],
+				"@typescript-eslint/no-redeclare": "error",
+				"@typescript-eslint/no-shadow": "error",
+				"unused-imports/no-unused-imports-ts": "error",
+				"unused-imports/no-unused-vars-ts": [
+					"error",
+					{
+						"vars": "all",
+						"varsIgnorePattern": "^_",
+						"args": "after-used",
+						"argsIgnorePattern": "^_"
+					}
+				],
+				"@typescript-eslint/no-floating-promises": "error",
+				"no-return-await": "off",
+				"@typescript-eslint/return-await": "error"
+			}
+		},
+		{
+			"files": ["test/*.ts", "test/**/*.ts"],
+			"rules": {
+				"@typescript-eslint/no-explicit-any": "off",
+				"@typescript-eslint/no-magic-numbers": "off"
+			}
+		},
+		{
+			"files": ["*.js", "**/*.js"],
+			"rules": {}
+		},
+		{
+			"files": ["test/*.js", "test/**/*.js"],
+			"rules": {}
+		}
+	],
 	"rules": {
 		"indent": ["error", "tab"],
 		"linebreak-style": ["error", "unix"],
 		"quotes": ["error", "single"],
-		"semi": ["error", "always"],
-		"@typescript-eslint/no-explicity-any": "error",
-		"no-magic-numbers": "off",
-		"@typescript-eslint/no-magic-numbers": [
-			"error",
-			{
-				"ignore": [0, 1, -1],
-				"ignoreEnums": false
-			}
-		],
-		"@typescript-eslint/no-redeclare": "error",
-		"@typescript-eslint/no-shadow": "error",
-		"unused_imports/no-unused_imports-ts": "error",
-		"unused_imports/no-unused_vars-ts": [
-			"error",
-			{
-				"vars": "all",
-				"varsIgnorePattern": "^_",
-				"args": "after-used",
-				"argsIgnorePattern": "^_"
-			}
-		],
-		"@typescript-eslint/no-floating-promises": "error",
-		"no-return-await": "off",
-		"@typescript-eslint/return-await": "error"
+		"semi": ["error", "always"]
 	}
 }
