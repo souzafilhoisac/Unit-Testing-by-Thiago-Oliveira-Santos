@@ -1,38 +1,54 @@
 {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": [
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended"
-    ],
-    "overrides": [
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
-    }
+	"env": {
+		"browser": true,
+		"commonjs": true,
+		"es2021": true
+	},
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+	"overrides": [],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": ["tsconfig.json"],
+		"ecmaVersion": "latest"
+	},
+	"plugins": ["@typescript-eslint", "unused_imports"],
+	"ignorePatterns": [
+		"*.json",
+		"dist/**",
+		"build/**",
+		"bin/**",
+		"templates/**",
+		"test/**/*.json",
+		"coverage/**"
+	],
+	"rules": {
+		"indent": ["error", "tab"],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"@typescript-eslint/no-explicity-any": "error",
+		"no-magic-numbers": "off",
+		"@typescript-eslint/no-magic-numbers": [
+			"error",
+			{
+				"ignore": [0, 1, -1],
+				"ignoreEnums": false
+			}
+		],
+		"@typescript-eslint/no-redeclare": "error",
+		"@typescript-eslint/no-shadow": "error",
+		"unused_imports/no-unused_imports-ts": "error",
+		"unused_imports/no-unused_vars-ts": [
+			"error",
+			{
+				"vars": "all",
+				"varsIgnorePattern": "^_",
+				"args": "after-used",
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"@typescript-eslint/no-floating-promises": "error",
+		"no-return-await": "off",
+		"@typescript-eslint/return-await": "error"
+	}
 }

@@ -1,6 +1,6 @@
 {
-  "entryFile": "index",
-  "compilerOptions": {
-    "tsConfigPath": "tsconfig.json"
-  }
+	"entryFile": "index",
+	"compilerOptions": {
+		"tsConfigPath": "tsconfig.json"
+	}
 }
