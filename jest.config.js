@@ -11,8 +11,8 @@ module.exports = {
 	preset: 'ts-jest',
 	moduleNameMapper: {
 		'^src/(.*)': '<rootDir>/src/$1',
-		'^test/(.*)': '<rootDir/test/$1>',
-		'@core/(.*)': '<rootDir/src/core/$1'
+		'^test/(.*)': '<rootDir>/test/$1',
+		'@core/(.*)': '<rootDir>/src/core/$1'
 	},
 	coverageDirectory: './coverage',
 	collectCoverageForm: [
@@ -24,7 +24,7 @@ module.exports = {
 	testEnvironment: 'node',
 	setupFilesAfterEnv: [
 		'jest-extended/all',
-		'<rootDir/test/setup.ts>'
+		'<rootDir>/test/setup.ts'
 	],
 	coverageThreshold: {
 		global: {
