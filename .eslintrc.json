@@ -18,7 +18,8 @@
 		"bin/**",
 		"templates/**",
 		"test/**/*.json",
-		"coverage/**"
+		"coverage/**",
+		"jest.config.js"
 	],
 	"overrides": [
 		{
