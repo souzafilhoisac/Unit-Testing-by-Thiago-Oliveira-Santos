@@ -1,10 +1,9 @@
 // import * as printSomethingLib from '@core/print-something';
 
 const printSomething = jest.fn();
-jest.mock('@core/print-something', () => ({printSomething}));
+jest.mock('@core/print-something', () => ({ printSomething }));
 
 describe('index.ts', () => {
-
 	// beforeEach(() => {
 	// 	jest.spyOn(printSomethingLib, 'printSomething').mockReturnValue();
 	// });
@@ -18,6 +17,5 @@ describe('index.ts', () => {
 		// expect(printSomethingLib.printSomething).toBeCalledTimes(2);
 		// expect(printSomethingLib.printSomething).toHaveBeenNthCalledWith(1);
 		// expect(printSomethingLib.printSomething).toHaveBeenNthCalledWith(2);
-
 	});
 });

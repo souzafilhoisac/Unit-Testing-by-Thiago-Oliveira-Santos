@@ -11,7 +11,7 @@ Chamemos, então, essa função de **getNumber**;
 enum MappedNumbers {
 	zero = 0,
 	um = 1,
-	dois = 2
+	dois = 2,
 }
 
 export function getNumber(numberName: string): number {
