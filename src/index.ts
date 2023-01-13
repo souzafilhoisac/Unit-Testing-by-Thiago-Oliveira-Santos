@@ -1,4 +1,4 @@
-import { myFunction } from '@core/my-function';
+import { printSomething } from '@core/print-something';
 
-myFunction();
-myFunction();
+printSomething();
+printSomething('my test message');
